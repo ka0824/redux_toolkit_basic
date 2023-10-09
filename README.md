@@ -29,11 +29,15 @@
     -   기존 redux는 boilertemplate(기본 코드)가 너무 길다는 단점이 있었음
     -   toolkit을 통해 코드를 간략화 할 수 있음
 
+<br />
+
 -   불변성 관리
     -   기존 redux에서는 상태 관리 로직에서 불변성 관리가 되지 않아, 기존 값을 따로 복사해야 했음
     -   ex) { ...state, name: 홍길동 }
     -   toolkit을 사용할 시 불변성 유지가 되기 때문에, 변경하고 싶은 값만 변경하면 됨
     -   ex) state.name = "홍길동"
+
+<br />
 
 -   개발자 도구 적용 간편
     -   toolkit은 redux-devtools를 따로 설치하지 않고, 설정만 해도 적용
@@ -49,6 +53,8 @@
     -   초기 상태 값 설정
     -   slice 내부에 action 생성 (state의 변경 시키고 싶은 값만 수정)
     -   slice를 통해 생성된 action 내보내기
+
+<br />
 
 ```
 // store/slice/infoSlice.js
@@ -80,10 +86,14 @@ export const { changeName, changeAge } = infoSlice.actions;
 export default infoSlice.reducer;
 ```
 
+<br />
+
 -   store 생성
     -   configure 함수 사용
     -   reducer 등록
     -   개발자 도구 사용 설정
+
+<br />
 
 ```
 // store/store.js
@@ -105,7 +115,11 @@ const store = configureStore({
 export default store;
 ```
 
+<br />
+
 -   가장 상위 컴포넌트에 store 등록
+
+<br />
 
 ```
 // main.jsx
@@ -126,10 +140,14 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 );
 ```
 
+<br />
+
 -   redux 사용하기
     -   state 불러오기
     -   dispatch 사용하기
     -   dispatch를 통해 action을 store로 전달
+
+<br />
 
 ```
 // App.jsx
